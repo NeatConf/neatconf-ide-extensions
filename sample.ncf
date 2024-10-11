@@ -1,0 +1,96 @@
+# List example 1 (simple one level items)
+fruits
+    apple
+    banana
+    orange
+
+# List example 2 (without dashes)
+numbers
+    1
+	2
+	    2.5
+		2.6
+    3
+    4
+		4.1
+			4.1.1
+			4.1.2
+		4.2
+	5
+
+# List of objects ( correct )
+users
+    Alice
+        age = 30
+    Bob
+        age = 25
+
+test
+  wrong_indent
+    item1
+    item2
+    item3
+
+item
+    subitem
+        subitem2
+            subitem3
+                subitem4
+
+# Multi-line string example
+description = <
+This is a multi-line
+string that can span
+multiple lines, and can contain
+any kind of text.
+of course, env variables can be used here too: ${HOME}
+>
+
+test
+    test_sub_multiline = <
+    This is a test
+    on a sub item
+    with a variable: ${PWD}
+    >
+
+# Arithmetic operations
+calculations
+    sum = 10 + 5
+    difference = 20 - 7
+    product = 6 * 4
+    quotient = 100 / 5
+
+# Date and time literals
+dates
+    today = 2018-11-05
+    meeting_time = 14:30:00
+    future_date = 14d
+
+# Unit values
+storage
+    max_size = raw 500MB
+    backup_interval = raw 2hour
+
+# Processed value for comparison
+processed_storage
+    max_size = 500MB
+    backup_interval = 2hour
+
+# Conditional example
+if features.enable_new_feature then
+    new_feature
+        name = "Awesome Feature"
+        status = "enabled"
+
+# Inheritance example
+inherit base_config
+
+# Advanced configuration
+advanced
+    timeout = 30s
+    max_retries = 3
+    cache_size = 2GB
+
+# Environment variable substitution example
+api_key = ${API_KEY}
+mixed_value = "The API key is: ${API_KEY}"

@@ -1,0 +1,90 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "NeatConf",
+  "patterns": [
+    { "include": "#comments" },
+    { "include": "#keywords" },
+    { "include": "#nested-items" },
+    { "include": "#key-value-pair" },
+    { "include": "#list-item" },
+    { "include": "#multiline-string" },
+    { "include": "#environment-variable" },
+    { "include": "#date-time" },
+    { "include": "#numeric-with-units" }
+  ],
+  "repository": {
+    "comments": {
+      "match": "#.*$",
+      "name": "comment.line.number-sign.neatconf"
+    },
+    "keywords": {
+      "match": "\\b(if|else|then|end|inherit|include)\\b",
+      "name": "keyword.control.neatconf"
+    },
+    "nested-items": {
+      "patterns": [
+        {
+          "match": "^([a-zA-Z_][a-zA-Z0-9_]*)\\s*:?\\s*$",
+          "name": "entity.name.section.level-1.neatconf"
+        },
+        {
+          "match": "^(\\s{4})([a-zA-Z_][a-zA-Z0-9_]*)\\s*:?\\s*$",
+          "captures": {
+            "2": { "name": "entity.name.section.level-2.neatconf" }
+          }
+        },
+        {
+          "match": "^(\\s{8})([a-zA-Z_][a-zA-Z0-9_]*)\\s*:?\\s*$",
+          "captures": {
+            "2": { "name": "entity.name.section.level-3.neatconf" }
+          }
+        },
+        {
+          "match": "^(\\s{12})([a-zA-Z_][a-zA-Z0-9_]*)\\s*:?\\s*$",
+          "captures": {
+            "2": { "name": "entity.name.section.level-4.neatconf" }
+          }
+        },
+        {
+          "match": "^(\\s{16,})([a-zA-Z_][a-zA-Z0-9_]*)\\s*:?\\s*$",
+          "captures": {
+            "2": { "name": "entity.name.section.level-5-plus.neatconf" }
+          }
+        }
+      ]
+    },
+    "key-value-pair": {
+      "match": "^\\s*([a-zA-Z_][a-zA-Z0-9_]*)\\s*(=)\\s*(.*)$",
+      "captures": {
+        "1": { "name": "variable.other.key.neatconf" },
+        "2": { "name": "keyword.operator.assignment.neatconf" },
+        "3": { "name": "string.unquoted.neatconf" }
+      }
+    },
+    "list-item": {
+      "match": "^\\s+(\\S.*)$",
+      "name": "markup.list.unnumbered.neatconf"
+    },
+    "multiline-string": {
+      "begin": "=\\s*<",
+      "end": ">",
+      "name": "string.quoted.other.multiline.neatconf",
+      "patterns": [
+        { "include": "#environment-variable" }
+      ]
+    },
+    "environment-variable": {
+      "match": "\\$\\{[A-Z_]+\\}",
+      "name": "variable.other.env.neatconf"
+    },
+    "date-time": {
+      "match": "\\b\\d{4}-\\d{2}-\\d{2}\\b|\\b\\d+[dhms]\\b",
+      "name": "constant.numeric.date-time.neatconf"
+    },
+    "numeric-with-units": {
+      "match": "\\b\\d+(\\.\\d+)?\\s*[kMGT]?B\\b",
+      "name": "constant.numeric.with-units.neatconf"
+    }
+  },
+  "scopeName": "source.neatconf"
+}

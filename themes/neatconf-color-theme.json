@@ -1,0 +1,91 @@
+{
+  "name": "NeatConf Theme",
+  "type": "dark",
+  "colors": {
+    "editor.background": "#2b2b2b",
+    "editor.foreground": "#d4d4d4"
+  },
+  "tokenColors": [
+    {
+      "scope": ["entity.name.section.level-1.neatconf"],
+      "settings": {
+        "foreground": "#7cafc2",
+        "fontStyle": "bold"
+      }
+    },
+    {
+      "scope": ["entity.name.section.level-2.neatconf"],
+      "settings": {
+        "foreground": "#a1b56c"
+      }
+    },
+    {
+      "scope": ["entity.name.section.level-3.neatconf"],
+      "settings": {
+        "foreground": "#dc9656"
+      }
+    },
+    {
+      "scope": ["entity.name.section.level-4.neatconf"],
+      "settings": {
+        "foreground": "#ba8baf"
+      }
+    },
+    {
+      "scope": ["entity.name.section.level-5-plus.neatconf"],
+      "settings": {
+        "foreground": "#86c1b9"
+      }
+    },
+    {
+      "scope": ["variable.other.key.neatconf"],
+      "settings": {
+        "foreground": "#ab4642"
+      }
+    },
+    {
+      "scope": ["string.unquoted.neatconf", "string.quoted.other.multiline.neatconf"],
+      "settings": {
+        "foreground": "#a1b56c"
+      }
+    },
+    {
+      "scope": ["markup.list.unnumbered.neatconf"],
+      "settings": {
+        "foreground": "#d4d4d4"
+      }
+    },
+    {
+      "scope": ["comment.line.number-sign.neatconf"],
+      "settings": {
+        "foreground": "#5a7b8c",
+        "fontStyle": "italic"
+      }
+    },
+    {
+      "scope": ["constant.numeric.date-time.neatconf", "constant.numeric.with-units.neatconf"],
+      "settings": {
+        "foreground": "#dc9656"
+      }
+    },
+    {
+      "scope": ["variable.other.env.neatconf"],
+      "settings": {
+        "foreground": "#f7ca88"
+      }
+    },
+    {
+      "scope": ["keyword.operator.assignment.neatconf"],
+      "settings": {
+        "foreground": "#d4d4d4"
+      }
+    },
+    {
+      "scope": ["keyword.control.neatconf"],
+      "settings": {
+        "foreground": "#ba8baf",
+        "fontStyle": "bold"
+      }
+    }
+  ]
+}

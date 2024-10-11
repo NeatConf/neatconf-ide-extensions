@@ -1,0 +1,27 @@
+{
+  "Include statement": {
+    "prefix": "include",
+    "body": [
+      "include ${1:filename}"
+    ],
+    "description": "Include another NeatConf file"
+  },
+  "If statement": {
+    "prefix": "if",
+    "body": [
+      "if ${1:condition} then",
+      "\t$0",
+      "end"
+    ],
+    "description": "If statement in NeatConf"
+  },
+  "Multi-line string": {
+    "prefix": "multiline",
+    "body": [
+      "${1:key} = <",
+      "\t$0",
+      ">"
+    ],
+    "description": "Multi-line string in NeatConf"
+  }
+}
